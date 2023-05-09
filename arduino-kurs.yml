@@ -122,7 +122,16 @@ modules:
     showInCustom: station
     width: full
     height: tall
-  - url: https://edrys-org.github.io/module-video-chat/
+  - url: https://cross-lab-project.github.io/module-video-chat-jitsi/
+    config:
+      instance: https://meet.jit.si
+      config: '&config.startWithAudioMuted=true'
+    studentConfig:
+      config: '&config.startWithVideoMuted=true&stud'
+    teacherConfig:
+      config: '&config.startWithVideoMuted=true&teach'
+    stationConfig:
+      config: '&config.startWithVideoMuted=false&station'
     showInCustom: station
     width: full
     height: tall
