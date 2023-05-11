@@ -54,7 +54,7 @@ modules:
         byte leds[] = {13, 12, 11, 10};
 
         void setup() {
-          Serial.begin(115200);
+          Serial.begin(9600);
           for (byte i = 0; i < sizeof(leds); i++) {
             pinMode(leds[i], OUTPUT);
           }
@@ -97,7 +97,7 @@ modules:
       editorText: |
         byte leds[] = {13, 12, 11, 10};
         void setup() {
-          Serial.begin(115200);
+          Serial.begin(9600);
           for (byte i = 0; i < sizeof(leds); i++) {
             pinMode(leds[i], OUTPUT);
           }
@@ -115,7 +115,21 @@ modules:
     config:
       server: http://localhost:5000/pty
       execute: execute
-      script: echo $CODE | base64 --decode
+      script: |
+        {
+        SKETCH=Test
+        arduino-cli sketch new -f ${SKETCH}
+
+        olddir=$(pwd)
+        cd ${SKETCH}
+        echo $CODE | base64 --decode > ${SKETCH}.ino
+
+        arduino-cli board attach -p /dev/ttyACM0
+        arduino-cli compile
+        arduino-cli upload
+        cd $olddir
+        arduino-cli monitor -p /dev/ttyACM0
+        }
       enable:
         teacher: true
         student: true
