@@ -1,108 +1,114 @@
 {
-    "id": "867h9k2xYapYq324ezDQX",
-    "createdBy": "andredietrich@web.de",
-    "dateCreated": 1683560033614,
-    "name": "Arduino Kurs",
-    "members": {
-      "teacher": [
-        "andre.dietrich@informatik.tu-freiberg.de",
-        "sebastian.zug@informatik.tu-freiberg.de",
-        "test@web.de",
-        "andredietrich@web.de"
-      ],
-      "student": []
+  "id": "867h9k2xYapYq324ezDQX",
+  "createdBy": "andredietrich@web.de",
+  "dateCreated": 1683560033614,
+  "name": "Arduino Kurs",
+  "members": {
+    "teacher": [
+      "andre.dietrich@informatik.tu-freiberg.de",
+      "sebastian.zug@informatik.tu-freiberg.de",
+      "test@web.de",
+      "andredietrich@web.de"
+    ],
+    "student": []
+  },
+  "modules": [{
+      "url": "https://cross-lab-project.github.io/edrys_module-markdown-it/index.html",
+      "config": "# Was ist Arduino?\n\nArduino ist eine Open-Source-Plattform für Elektronik-Projekte, die aus einer einfachen Hardware und einer benutzerfreundlichen Software besteht. Es wurde entwickelt, um es für Menschen leichter zu machen, interaktive Objekte oder Systeme zu bauen und zu programmieren.\n\nDie Hardware besteht aus einer Leiterplatte mit einem Mikrocontroller, der eine Vielzahl von Ein- und Ausgängen hat, die es ermöglichen, verschiedene elektronische Komponenten wie Sensoren, LEDs, Motoren und andere Module anzuschließen.\n\nDie Software, auch bekannt als Arduino Integrated Development Environment (IDE), ist eine Plattform, die es ermöglicht, den Mikrocontroller auf einfache Weise zu programmieren. Es ist eine textbasierte Programmiersprache, die auf C++ basiert und für Anfänger leicht zu erlernen ist.\n\n## Kurze Einführung zur Programmierung von Arduino\nUm einen Arduino zu programmieren, benötigt man die Arduino-IDE-Software, die kostenlos heruntergeladen und installiert werden kann. Die IDE enthält eine Bibliothek von vorgefertigten Funktionen, die es einfach machen, mit der Hardware zu interagieren und Projekte zu erstellen.\nDie Programmierung von Arduino erfolgt durch das Schreiben von Code in der Arduino-IDE. Der Code wird in der IDE geschrieben, kompiliert und dann auf den Mikrocontroller des Arduino-Boards hochgeladen. Sobald der Code hochgeladen wurde, kann der Mikrocontroller die angeschlossenen elektronischen Komponenten steuern und damit das gewünschte Verhalten erzeugen.\nEs gibt eine Vielzahl von Online-Ressourcen, Tutorials und Projekten, die sich speziell an Anfänger richten und dabei helfen, die Programmierung von Arduino zu erlernen. Mit etwas Übung kann jeder schnell und einfach Projekte erstellen und damit eine Menge Spaß haben.\n## Weitere Informationen\n* Was ist Arduino: https://de.wikipedia.org/wiki/Arduino_(Plattform)\n* Wo finde ich das Projekt:  https://www.arduino.cc\n---\n<iframe\n    width=\"560\"\n    height=\"315\"\n    src=\"https://www.youtube.com/embed/L6hfG-v7GL4\"\n    title=\"YouTube video player\"\n    frameborder=\"0\"\n    allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\"\n    allowfullscreen>\n </iframe>",
+      "showInCustom": "lobby",
+      "width": "full",
+      "height": "tall"
     },
-    "modules": [
-      {
-        "url": "https://edrys-org.github.io/module-liascript/",
-        "config": {
-          "course": "https://raw.githubusercontent.com/TUBAF-IfI-LiaScript/VL_EingebetteteSysteme/master/00_Einfuehrung.md"
-        },
-        "showInCustom": "room 1",
-        "width": "full",
-        "height": "tall"
+    {
+      "url": "https://edrys-org.github.io/module-liascript/",
+      "config": {
+        "course": "https://raw.githubusercontent.com/TUBAF-IfI-LiaScript/VL_EingebetteteSysteme/master/00_Einfuehrung.md"
       },
-      {
-        "url": "https://cross-lab-project.github.io/edrys_module-markdown-it/index.html",
-        "config": "# Aufgabenstellung\n\nImplementiert einen Knight-Rider LED Effekt, bei dem sich das Licht von links nach rechts und von rechts nach links bewegt.\n\n<div style=\"width:100%;height:0;padding-bottom:75%;position:relative;\"><iframe src=\"https://giphy.com/embed/Bo2WsocASVBm0\" width=\"100%\" height=\"100%\" style=\"position:absolute\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe></div><p><a href=\"https://giphy.com/gifs/80s-nbc-knight-rider-Bo2WsocASVBm0\">via GIPHY</a></p>",
-        "showInCustom": "room 2",
-        "width": "full",
-        "height": "tall",
-        "teacherConfig": "# Lösung\n\n``` cpp\n// todo\n```"
-      },
-      {
-        "url": "https://cross-lab-project.github.io/edrys_module-editor/index.html",
-        "showInCustom": "room 2",
-        "width": "full",
-        "height": "tall",
-        "config": {
-          "runCommand": "execute",
-          "language": "cpp",
-          "theme": "light",
-          "editorText": "byte leds[] = {13, 12, 11, 10};\n\nvoid setup() {\n  Serial.begin(115200);\n  for (byte i = 0; i < sizeof(leds); i++) {\n    pinMode(leds[i], OUTPUT);\n  }\n}\n\nint i = 0;\n\nvoid loop() {\n  Serial.print(\"LED: \");\n  Serial.println(i);\n  digitalWrite(leds[i], HIGH);\n  delay(250);\n  digitalWrite(leds[i], LOW);\n  i = (i + 1) % sizeof(leds);\n}\n"
-        }
-      },
-      {
-        "url": "https://cross-lab-project.github.io/edrys_module-avr8js/index.html",
-        "showInCustom": "room 2",
-        "width": "full",
-        "height": "tall",
-        "config": {
-          "execute": "execute",
-          "modules": "<wokwi-led color='red'   pin='13' label='13'></wokwi-led>\n<wokwi-led color='green' pin='12' label='12'></wokwi-led>\n<wokwi-led color='blue'  pin='11' label='11'></wokwi-led>\n<wokwi-led color='blue'  pin='10' label='10'></wokwi-led>\n<span id='simulation-time'></span>\n"
-        }
-      },
-      {
-        "url": "https://cross-lab-project.github.io/edrys_module-markdown-it/index.html",
-        "showInCustom": "station",
-        "width": "full",
-        "height": "tall"
-      },
-      {
-        "url": "https://cross-lab-project.github.io/edrys_module-editor/index.html",
-        "showInCustom": "station",
-        "width": "full",
-        "height": "tall",
-        "config": {
-          "runCommand": "execute",
-          "language": "cpp",
-          "theme": "light",
-          "editorText": "byte leds[] = {13, 12, 11, 10};\nvoid setup() {\n  Serial.begin(115200);\n  for (byte i = 0; i < sizeof(leds); i++) {\n    pinMode(leds[i], OUTPUT);\n  }\n}\nint i = 0;\nvoid loop() {\n  Serial.print(\"LED: \");\n  Serial.println(i);\n  digitalWrite(leds[i], HIGH);\n  delay(250);\n  digitalWrite(leds[i], LOW);\n  i = (i + 1) % sizeof(leds);\n}\n"
-        }
-      },
-      {
-        "url": "https://cross-lab-project.github.io/edrys_module-pyxtermjs/index.html",
-        "config": {
-          "server": "http://localhost:5000/pty",
-          "execute": "execute",
-          "script": "echo $CODE | base64 --decode",
-          "enable": {
-            "teacher": true,
-            "student": true
-          }
-        },
-        "showInCustom": "station",
-        "width": "full",
-        "height": "tall"
-      },
-      {
-        "url": "https://cross-lab-project.github.io/module-video-chat-jitsi/",
-        "config": {
-          "instance": "https://meet.jit.si",
-          "config": "&config.startWithAudioMuted=true"
-        },
-        "studentConfig": {
-          "config": "&config.startWithVideoMuted=true&stud"
-        },
-        "teacherConfig": {
-          "config": "&config.startWithVideoMuted=true&teach"
-        },
-        "stationConfig": {
-          "config": "&config.startWithVideoMuted=false&station"
-        },
-        "showInCustom": "station",
-        "width": "full",
-        "height": "tall"
+      "showInCustom": "room 1",
+      "width": "full",
+      "height": "tall"
+    },
+    {
+      "url": "https://cross-lab-project.github.io/edrys_module-markdown-it/index.html",
+      "config": "# Aufgabenstellung\n\nImplementiert einen Knight-Rider LED Effekt, bei dem sich das Licht von links nach rechts und von rechts nach links bewegt.\n\n<div style=\"width:100%;height:0;padding-bottom:75%;position:relative;\"><iframe src=\"https://giphy.com/embed/Bo2WsocASVBm0\" width=\"100%\" height=\"100%\" style=\"position:absolute\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe></div><p><a href=\"https://giphy.com/gifs/80s-nbc-knight-rider-Bo2WsocASVBm0\">via GIPHY</a></p>",
+      "showInCustom": "room 2",
+      "width": "full",
+      "height": "tall",
+      "teacherConfig": "# Lösung\n\n``` cpp\n// todo\n```"
+    },
+    {
+      "url": "https://cross-lab-project.github.io/edrys_module-editor/index.html",
+      "showInCustom": "room 2",
+      "width": "full",
+      "height": "tall",
+      "config": {
+        "runCommand": "execute",
+        "language": "cpp",
+        "theme": "light",
+        "editorText": "byte leds[] = {13, 12, 11, 10};\n\nvoid setup() {\n  Serial.begin(9600);\n  for (byte i = 0; i < sizeof(leds); i++) {\n    pinMode(leds[i], OUTPUT);\n  }\n}\n\nint i = 0;\n\nvoid loop() {\n  Serial.print(\"LED: \");\n  Serial.println(i);\n  digitalWrite(leds[i], HIGH);\n  delay(250);\n  digitalWrite(leds[i], LOW);\n  i = (i + 1) % sizeof(leds);\n}\n"
       }
-    ]
-  }
+    },
+    {
+      "url": "https://cross-lab-project.github.io/edrys_module-avr8js/index.html",
+      "showInCustom": "room 2",
+      "width": "full",
+      "height": "tall",
+      "config": {
+        "execute": "execute",
+        "modules": "<wokwi-led color='red'   pin='13' label='13'></wokwi-led>\n<wokwi-led color='green' pin='12' label='12'></wokwi-led>\n<wokwi-led color='blue'  pin='11' label='11'></wokwi-led>\n<wokwi-led color='blue'  pin='10' label='10'></wokwi-led>\n<span id='simulation-time'></span>\n"
+      }
+    },
+    {
+      "url": "https://cross-lab-project.github.io/edrys_module-markdown-it/index.html",
+      "showInCustom": "station",
+      "width": "full",
+      "height": "tall"
+    },
+    {
+      "url": "https://cross-lab-project.github.io/edrys_module-editor/index.html",
+      "showInCustom": "station",
+      "width": "full",
+      "height": "tall",
+      "config": {
+        "runCommand": "execute",
+        "language": "cpp",
+        "theme": "light",
+        "editorText": "byte leds[] = {13, 12, 11, 10};\nvoid setup() {\n  Serial.begin(9600);\n  for (byte i = 0; i < sizeof(leds); i++) {\n    pinMode(leds[i], OUTPUT);\n  }\n}\nint i = 0;\nvoid loop() {\n  Serial.print(\"LED: \");\n  Serial.println(i);\n  digitalWrite(leds[i], HIGH);\n  delay(250);\n  digitalWrite(leds[i], LOW);\n  i = (i + 1) % sizeof(leds);\n}\n"
+      }
+    },
+    {
+      "url": "https://cross-lab-project.github.io/edrys_module-pyxtermjs/index.html",
+      "config": {
+        "server": "http://localhost:5000/pty",
+        "execute": "execute",
+        "script": "{\nSKETCH=Test\narduino-cli sketch new -f ${SKETCH}\n\nolddir=$(pwd)\ncd ${SKETCH}\necho $CODE | base64 --decode > ${SKETCH}.ino\n\narduino-cli board attach -p /dev/ttyACM0\narduino-cli compile\narduino-cli upload\ncd $olddir\narduino-cli monitor -p /dev/ttyACM0\n}\n",
+        "enable": {
+          "teacher": true,
+          "student": true
+        }
+      },
+      "showInCustom": "station",
+      "width": "full",
+      "height": "tall"
+    },
+    {
+      "url": "https://cross-lab-project.github.io/module-video-chat-jitsi/",
+      "config": {
+        "instance": "https://meet.jit.si",
+        "config": "&config.startWithAudioMuted=true"
+      },
+      "studentConfig": {
+        "config": "&config.startWithVideoMuted=true&stud"
+      },
+      "teacherConfig": {
+        "config": "&config.startWithVideoMuted=true&teach"
+      },
+      "stationConfig": {
+        "config": "&config.startWithVideoMuted=false&station"
+      },
+      "showInCustom": "station",
+      "width": "full",
+      "height": "tall"
+    }
+  ]
+}

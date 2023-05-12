@@ -10,6 +10,69 @@ members:
     - andredietrich@web.de
   student: []
 modules:
+  - url: https://cross-lab-project.github.io/edrys_module-markdown-it/index.html
+    config: >-
+      # Was ist Arduino?
+
+
+      Arduino ist eine Open-Source-Plattform für Elektronik-Projekte, die aus
+      einer einfachen Hardware und einer benutzerfreundlichen Software besteht.
+      Es wurde entwickelt, um es für Menschen leichter zu machen, interaktive
+      Objekte oder Systeme zu bauen und zu programmieren.
+
+
+      Die Hardware besteht aus einer Leiterplatte mit einem Mikrocontroller, der
+      eine Vielzahl von Ein- und Ausgängen hat, die es ermöglichen, verschiedene
+      elektronische Komponenten wie Sensoren, LEDs, Motoren und andere Module
+      anzuschließen.
+
+
+      Die Software, auch bekannt als Arduino Integrated Development Environment
+      (IDE), ist eine Plattform, die es ermöglicht, den Mikrocontroller auf
+      einfache Weise zu programmieren. Es ist eine textbasierte
+      Programmiersprache, die auf C++ basiert und für Anfänger leicht zu
+      erlernen ist.
+
+
+      ## Kurze Einführung zur Programmierung von Arduino
+
+      Um einen Arduino zu programmieren, benötigt man die Arduino-IDE-Software,
+      die kostenlos heruntergeladen und installiert werden kann. Die IDE enthält
+      eine Bibliothek von vorgefertigten Funktionen, die es einfach machen, mit
+      der Hardware zu interagieren und Projekte zu erstellen.
+
+      Die Programmierung von Arduino erfolgt durch das Schreiben von Code in der
+      Arduino-IDE. Der Code wird in der IDE geschrieben, kompiliert und dann auf
+      den Mikrocontroller des Arduino-Boards hochgeladen. Sobald der Code
+      hochgeladen wurde, kann der Mikrocontroller die angeschlossenen
+      elektronischen Komponenten steuern und damit das gewünschte Verhalten
+      erzeugen.
+
+      Es gibt eine Vielzahl von Online-Ressourcen, Tutorials und Projekten, die
+      sich speziell an Anfänger richten und dabei helfen, die Programmierung von
+      Arduino zu erlernen. Mit etwas Übung kann jeder schnell und einfach
+      Projekte erstellen und damit eine Menge Spaß haben.
+
+      ## Weitere Informationen
+
+      * Was ist Arduino: https://de.wikipedia.org/wiki/Arduino_(Plattform)
+
+      * Wo finde ich das Projekt:  https://www.arduino.cc
+
+      ---
+
+      <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/L6hfG-v7GL4"
+          title="YouTube video player"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen>
+       </iframe>
+    showInCustom: lobby
+    width: full
+    height: tall
   - url: https://edrys-org.github.io/module-liascript/
     config:
       course: >-
